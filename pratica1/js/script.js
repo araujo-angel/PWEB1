@@ -13,6 +13,7 @@ function inserirUsuario() {
     const inputCpfElement = document.querySelector('#cpf').value;
     const usuario = {nome: inputNomeElement, idade: inputIdadeElement, cpf: inputCpfElement}
     inserirUsuarioNaLista(usuario);
+    usuarios.push(usuario);
 }
 
 function inserirUsuarioNaLista(usuario) {
@@ -21,6 +22,8 @@ function inserirUsuarioNaLista(usuario) {
     botaoRemoverElement.textContent = 'X';
     botaoRemoverElement.addEventListener('click', (event) => {
         liElement.remove();
+        usuarios.slice(usuario, 1);
+        console.log("tamanho do array depois da remocao" + usuarios.length)
     });
 
     const spanElement = document.createElement('span');
@@ -37,4 +40,5 @@ function inserirUsuarioNaLista(usuario) {
     liElement.appendChild(botaoRemoverElement);
 
     listaUsuariosElement.appendChild(liElement);
+    console.log("tamanho do array" + usuarios.length)
 }
