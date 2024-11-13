@@ -24,7 +24,7 @@ function inserirUsuarioNaLista(usuario) {
     });
 
     const spanElement = document.createElement('span');
-    spanElement.textContent = `Nome: ${usuario.nome}, Idade: ${usuario.idade}, CPF: ${usuario.cpf} `;
+    spanElement.textContent = ` - Nome: ${usuario.nome} - Idade: ${usuario.idade} - CPF: ${usuario.cpf} `;
 
     spanElement.addEventListener('click', event => {
         const inputElement = usuario('input');
